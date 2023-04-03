@@ -1,0 +1,53 @@
+Write a C++ program to create a linked list using a function of the
+following prototype:
+void create List(struct linked List *);
+#include &lt;iostream&gt;
+#include &lt;stdlib.h&gt;
+using namespace std;
+struct linkedlist
+{
+
+int data;
+struct linkedlist *next;
+};
+void create_list(struct linkedlist *Head)
+{
+cout&lt;&lt;&quot;***Please Enter 0 at the END of the List***\n&quot;;
+struct linkedlist *position,*current;
+do
+{
+current=(struct linkedlist*)malloc(sizeof(struct linkedlist));
+cout &lt;&lt;&quot;\nEnter Data into the Linked List:- \n&quot;;
+cin &gt;&gt; current-&gt;data;
+current-&gt;next=NULL;
+if(current-&gt;data==0)
+{
+break;
+}
+if(Head == NULL)
+{
+Head=current;
+}
+else
+{
+position-&gt;next=current;
+}
+position=current;
+}
+while(1);
+{
+cout &lt;&lt;&quot;\nThe Linked List aftr User Input is: \n&quot;;
+}
+struct linkedlist *p=Head;
+while(p!=NULL)
+{
+cout &lt;&lt; p-&gt;data &lt;&lt; &quot; &quot;;
+p=p-&gt;next;
+}
+
+}
+int main()
+{
+struct linkedlist *Head=NULL;
+create_list(Head);
+}
